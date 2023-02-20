@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" />
+
+
+<a href="/add" class="btn1">Tilføj ingrediens</a>
+<a href="/ingEdit" class="btn1">Redigere ingrediens </a>
+<a href="/delete" class="btn1">delete </a>
+
+
+
+<a href="/" class="btn btn-details">Tilbage Menu</a>
+
+
+<center>
+    <table border=5>
+        <thead>
+                <td>id: </td>
+                <td>Navn: </td>
+                <td>inventar: </td>
+  
+        </thead>
+        {% for row in rows %}
+            <tr>
+                <td>{{row["idIngredienser"]}}</td>
+                <td>{{row["navnING"]}}</td>
+                <td>{{row["inventar"]}}</td>
+  
+           </tr>
+  
+        {% endfor %}
+     
+      </table>     
+                  
+  
+        </body>
+        
+    </html>
+    

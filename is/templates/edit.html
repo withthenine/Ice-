@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ice</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" />
+
+  
+</head>
+<!-- <div class="container">
+    <h1>Tilføj ny ingrediens til databasen</h1>
+    <form action="#" method="post">
+
+      
+        <input type="text" name="is_id" placeholder="isens id">
+        <br>
+        <label for="">navn på is</label>
+        <br>
+        <input type="text" name="is_navn" placeholder="navnet på isen ">
+        <br>
+        <a href="/" class="btn btn-details">Tilbage</a>
+        <input type="submit" class="btn btn-send" value="SEND">
+    </form>
+</div> -->
+
+<body>
+    <center>
+        <table border=5>
+            
+            <thead>
+                    <td>Is id: </td>
+                    <td>Navn: </td>
+            </thead>
+            {% for row in rows %}
+                <tr>
+                    <td>{{row["idIs"]}}</td>
+                    <td>{{row["navn"]}}</td>
+    
+    
+                     
+                            <td>
+                      
+                             <form action="#" method="post">
+    
+                            <td>  
+                                <input type="text" readonly name="is_id" value = {{row.idIs}} placeholder="vælg id ">
+                            <br>
+                            </td>   
+                           
+                            <td>      
+                                
+                            <input type="text" name="is_navn"   placeholder="vælg navnet   ">
+                            <br>
+                            </td> 
+                            <td>
+                            <a href="/" class="btn btn-details">Tilbage</a>
+                            </td>  
+                            <td>
+                            <input type="submit" class="btn btn-send" value=" Edit">
+                        </td>
+                             </form>
+    
+    
+                            </td> 
+    
+                    </tr>
+    
+                    
+            {% endfor %}
+
+
+
+</body>
+</html>

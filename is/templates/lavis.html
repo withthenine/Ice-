@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" />
+
+
+
+    <div class="container">
+        <h1>Der kan produceres en is af gangen </h1>
+        <form action="#" method="post">
+    
+            <label for="">Vælg isen der blevet produceret</label>
+            <br>
+            <input type="number" name="is_pro" placeholder=" Isens ID">
+            <br>
+         
+            <a href="/" class="btn btn-details">Tilbage</a>
+            <input type="submit" class="btn btn-send" value="SEND">
+
+        </form>
+  
+     
+            <center>
+                <table border=5>
+                    <thead>
+                            <td>Id: </td>
+                            <td>Navn: </td>
+                          
+
+                    </thead>
+                    {% for row in rows %}
+                        <tr>
+                            <td>{{row["idIs"]}}</td>
+                            <td>{{row["navn"]}}</td>
+                        
+                            </tr>
+            
+                            
+                    {% endfor %}
+
+                 
+                  </table> 

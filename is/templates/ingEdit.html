@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" />
+
+<div class="container" >
+    <h1>edit ingrediens i databasen</h1>
+    <form action="#" method="post">
+        <input type="text" name="qid__input" placeholder="id"  >
+
+        <label for="">Ingrediens navn</label>
+        <br>
+        <input  type="text" name="qedit_input_navn" placeholder="Navn på ingrediens"  >
+        <br>
+        <label for="">Mængde på lager</label>
+        <br>
+        <input type="text" name="qedit_inventory" placeholder="Mængde af ingrediens på lager">
+        <br>
+        <a href="/" class="submit">Tilbage</a>
+        <input type="submit" class="btn btn-send" value="SEND">
+    </form>
+</div>
+
+<center>
+    <table border=5>
+        <thead>
+                <td>id: </td>
+                <td>Navn: </td>
+                <td>inventar: </td>
+
+        </thead>
+        {% for row in rows %}
+            <tr>
+                <td>{{row["idIngredienser"]}}</td>
+                <td>{{row["navnING"]}}</td>
+                <td>{{row["inventar"]}}</td>
+
+                <td> 
+                    <form action="#" method="post">
+                   <td>  
+                       <input type="text" readonly name="qid__input" value = {{row.idIngredienser}} placeholder="vælg id ">
+                   <br>
+                  </td>    
+
+                   <td>      
+                   <input type="text" name="qedit_input_navn" value = {{row.navnING}} placeholder="vælg navnet   ">
+                   <br>
+                   </td> 
+                <td> 
+                   <input type="text" name="qedit_inventory"  value = {{row.inventar}} placeholder="inventar   ">
+                </td>
+                   <td>
+                   <a href="/" class="btn btn-details">Tilbage</a>
+                   </td>  
+                   <td>
+                   <input type="submit" class="btn btn-send"  value=" Edit SEND">
+               </td>
+                    </form>
+
+
+                   </td> 
+
+           </tr>
+
+        {% endfor %}
+     
+      </table> 

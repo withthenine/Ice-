@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" />
+
+
+<a href="/edit" class="btn1">Redigere is</a>
+
+
+<a href="/" class="btn btn-details">Tilbage</a>
+
+<center>
+    <table border=5>
+        
+        <thead>
+                <td>Is id: </td>
+                <td>Navn: </td>
+        </thead>
+        {% for row in rows %}
+            <tr>
+                <td>{{row["idIs"]}}</td>
+                <td>{{row["navn"]}}</td>
+
+
+                 
+
+                </tr>
+
+                
+        {% endfor %}

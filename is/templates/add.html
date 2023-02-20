@@ -1,0 +1,44 @@
+
+<link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" />
+
+<div class="container">
+    <h1>Tilføj ny ingrediens til databasen</h1>
+    <form action="" method="post">
+        <label for="">Ingrediens navn</label>
+        <br>
+        <input type="text" name="ingre_input_navn" placeholder="Navn på ingrediens">
+        <br>
+        <label for="">Mængde på lager</label>
+        <br>
+        <input type="number" name="inventory" placeholder="Mængde af ingrediens på lager">
+        <br>
+        <a href="/" class="btn btn-details">Tilbage</a>
+        <input type="submit" class="btn btn-send" value="SEND">
+    </form>
+</div>
+
+<center>
+    <table border=5>
+        <thead>
+                <td>id: </td>
+                <td>Navn: </td>
+                <td>inventar: </td>
+
+        </thead>
+        {% for row in rows %}
+            <tr>
+                <td>{{row["idIngredienser"]}}</td>
+                <td>{{row["navnING"]}}</td>
+                <td>{{row["inventar"]}}</td>
+
+                 
+            </tr>
+
+        {% endfor %}
+     
+      </table> 
+
+
+
+
+      
